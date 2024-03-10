@@ -210,3 +210,90 @@ Sólo cuando comparamos null con null o undefined con undefined obtenemos true:
 
 null === null // -> true
 undefined === undefined // -> true
+
+
+Comentarios
+En JavaScript, los comentarios son una forma de agregar explicaciones al código que se ignora al ejecutar el programa.
+
+Los comentarios son útiles para explicar el por qué del código, documentar los cambios realizados en el código y hacer que el código sea más fácil de entender para otros desarrolladores.
+
+Hay dos tipos de comentarios en JavaScript: los comentarios de una sola línea y los comentarios de varias líneas.
+
+Comentarios de una sola línea //
+Los comentarios de una sola línea comienzan con // y se utilizan para agregar una explicación en una sola línea de código. Por ejemplo:
+
+// Sólo usamos 6 decimales
+const PI = 3.141592
+
+// Iniciamos el radio por 10, pero puede cambiar
+let radio = 10
+
+También puedes añadir un comentario de una sola línea al final de una línea de código. Por ejemplo:
+
+const PI = 3.141592 // Sólo usamos 6 decimales
+
+
+Comentarios de varias líneas /* */
+Los comentarios de varias líneas comienzan con /* y terminan con */. Se utilizan para agregar notas explicativas que ocupan varias líneas de código. Por ejemplo:
+
+/*
+  Este es un comentario de varias líneas.
+  Se utiliza para agregar notas explicativas que ocupan varias líneas de código.
+*/
+
+Ten en cuenta que también puedes lograr varias líneas usando el tipo de comentario //, sólo que en este caso, cada línea de código debe comenzar con //. Por ejemplo:
+
+// Este es un comentario de varias líneas.
+// Se utiliza para agregar notas explicativas que ocupan varias líneas de código.
+
+Es importante tener en cuenta que los comentarios no afectan el funcionamiento del código. Es decir, si se eliminan los comentarios, el código seguirá funcionando de la misma manera.
+
+Es recomendable utilizar comentarios con moderación y de manera efectiva para hacer que el código sea más fácil de entender y mantener. Los comentarios deben ser claros y concisos, y deben explicar lo que hace el código sin repetir lo que ya es obvio.
+
+Es mejor que tu código sea lo suficientemente claro como para no necesitar comentarios, pero si es necesario, utiliza comentarios para explicar el por qué del código, no el qué.
+
+
+CONSOLE.LOG()
+console.log() es una función integrada en JavaScript que se utiliza para imprimir mensajes en la consola del navegador o del editor de código. Se utiliza principalmente para depurar el código y para imprimir valores de variables y mensajes para ayudar en el proceso de desarrollo.
+
+Sintaxis
+Para poder mostrar estos mensajes en consola, debes escribir console.log() y dentro de los paréntesis, el mensaje que quieres mostrar.
+
+console.log('Hola, JavaScript')
+// -> 'Hola, JavaScript'
+
+También puedes averiguar el valor de una variable, escribiendo el nombre de la variable dentro de los paréntesis.
+
+const nombre = 'JavaScript'
+console.log(nombre)
+// -> 'JavaScript'
+
+Como ya sabes concatenar cadenas de texto, puedes mostrar un mensaje y el valor de una variable en el mismo console.log().
+
+const nombre = 'JavaScript'
+console.log('Hola, ' + nombre)
+// -> 'Hola, JavaScript'
+
+Además, puedes mostrar varios mensajes y valores de variables en el mismo console.log() separándolos por comas.
+
+const nombre = 'JavaScript'
+const version = 2023
+console.log(nombre, version)
+// -> 'JavaScript 2023'
+
+Más métodos de console
+Además de console.log(), existen otros métodos que puedes utilizar para imprimir mensajes en la consola. Algunos de ellos son:
+
+console.error(): Imprime un mensaje de error en la consola.
+console.warn(): Imprime un mensaje de advertencia en la consola.
+console.info(): Imprime un mensaje de información en la consola.
+Como ves, la sintaxis es la misma que console.log(), sólo cambia el nombre del método.
+
+Aunque puedes usar console.log() para imprimir cualquier tipo de mensaje, es recomendable utilizar los métodos que acabamos de ver para imprimir mensajes de error, advertencia e información ya que tienen un formato especial que los hace más fáciles de identificar.
+
+console.error('Error')
+// ❌ Error
+console.warn('Advertencia')
+// ⚠️ Advertencia
+console.info('Información')
+// ℹ️ Información
