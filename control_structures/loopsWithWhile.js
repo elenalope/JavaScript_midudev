@@ -44,3 +44,89 @@ while (cuentaAtras > 0) {
 
 console.log('¡Despegue! 🚀')
 //Si ejecutas este código en consola, deberías ver los números del 10 al 1, y después el mensaje de despegue.
+
+
+//CUIDADO CON LOS BUCLES INFINITOS
+//Los bucles while son muy potentes, pero también pueden ser peligrosos. Si la condición nunca se evalúa como falsa, el bucle se ejecutará infinitamente.
+while (true) {
+  console.log('¡Hola hasta el infinito!')
+}
+//Esto evaluará la condición true como verdadera, y ejecutará el código dentro de las llaves una y otra vez.
+
+//SALIENDO DE UN BUCLE CON BREAK
+//Podemos controlar cuándo queremos salir de un bucle utilizando la palabra reservada break. Cuando el intérprete de JavaScript encuentra la palabra break, sale del bucle y continúa ejecutando el código que haya después.
+
+let cuentaAtras2 = 10
+
+while (cuentaAtras2 > 0) {
+  console.log(cuentaAtras2)
+  cuentaAtras2 = cuentaAtras2 - 1
+
+  // si la cuenta atrás es 5, salimos del bucle
+  if (cuentaAtras2 === 5) {
+    break // <---- salimos del bucle
+  }
+}
+
+//¿Cuál es el valor de cuentaAtras en este código? Veamos, el bucle estaba haciendo una cuenta atrás... pero le hemos dicho que cuando tuviese el valor 5 saliese del bucle. Por lo tanto, el valor de cuentaAtras es 5.
+//Usar break puede ser útil en bucles si queremos salir de ellos por alguna condición en concreto o para evitar justamente los bucles infinitos.
+
+
+//SALTANDO UNA ITERACIÓN CON CONTINUE
+//Igual que tenemos la posibilidad de "romper" el bucle con break, también podemos saltarnos una iteración con continue. Cuando el intérprete de JavaScript encuentra la palabra continue, salta a la siguiente iteración del bucle.
+
+let cuentaAtras3 = 10
+
+while (cuentaAtras3 > 0) {
+  cuentaAtras3 = cuentaAtras3 - 1
+
+  // si la cuenta atrás es un número par...
+  if (cuentaAtras3 % 2 === 0) {
+    continue // <---- saltamos a la siguiente iteración
+  }
+
+  console.log(cuentaAtras3)
+}
+//¿Qué aparece en la salida de la consola? El bucle está haciendo una cuenta atrás... pero le hemos dicho que si el número es par, se salte esa iteración y deje de ejecutar el código que le sigue. Por ello, los números pares no aparecen en la consola.
+
+
+//ANIDACIÓN DE BUCLES
+//Podemos anidar bucles dentro de otros bucles. Imagina que en nuestra cuenta atrás para el cohete, tenemos que revisar que 3 cosas están en sus parámetros: el oxígeno, el combustible y la temperatura.
+
+const NUMERO_REVISIONES = 3
+let cuentaAtras4 = 10
+
+// mientras la cuenta atrás sea mayor que 0
+while (cuentaAtras4 > 0) {
+  // mostramos el valor de la cuenta atrás
+  console.log(cuentaAtras4)
+
+  // creamos una variable para contar las revisiones realizadas
+  // y la inicializamos a cero
+  let revisionesRealizadas = 0
+
+  // hasta que no hayamos realizado las 3 revisiones...
+  while (revisionesRealizadas < NUMERO_REVISIONES) {
+    // y sumamos 1 a las revisiones realizadas
+    revisionesRealizadas = revisionesRealizadas + 1
+    console.log(revisionesRealizadas + ' revisiones realizadas...')
+  }
+
+  // ahora podemos restar 1 a la cuenta atrás
+  cuentaAtras4 = cuentaAtras4 - 1
+}
+//¿Por qué la constante la hemos puesto toda en mayúsculas? Como ya explicamos en la clase de introducción a JavaScript, es una convención para indicar que es una constante y que no va a cambiar. Además del bucle anidado, hay algo también muy interesante en el código anterior y es la creación de la variable let revisionesRealizadas.
+//Ten en cuenta que esa variable se creará y se inicializará a 0 en cada iteración del bucle.
+
+//Las variables creadas con let y const que se crean dentro de un bucle, solo existen dentro de ese bucle. Cuando el bucle termina, la variable desaparece. De hecho si intentas acceder a ella fuera del bucle, te dará un error.
+
+let cuentaAtras5 = 10
+
+while (cuentaAtras5 > 0) {
+  let revisionesRealizadas = 3
+  console.log(revisionesRealizadas)
+  cuentaAtras5 = cuentaAtras5 - 1
+}
+
+console.log(revisionesRealizadas) // -> ERROR: ReferenceError
+//Esto también pasa con otras estructuras de control. Eso es porque el alcance de las variables creadas con let y const es el bloque entre {} en el que se crean. Lo iremos viendo más adelante para que vayas practicando, no te preocupes.
