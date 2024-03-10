@@ -5,4 +5,3 @@ while (cuentaAtras > 0) {
 }
 
 console.log('¡Despegue! 🚀')
-
